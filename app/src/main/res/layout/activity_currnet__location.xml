@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:context=".Activity.Currnet_Location"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+
+        app:cardBackgroundColor="@color/light_background"
+        app:cardCornerRadius="4dp">
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            android:layout_gravity="right"
+            android:textColor="@color/text_color"
+            style="@style/Widget.Neumorph.Button"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+
+        <fragment
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/google_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+        </fragment>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/maps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:cardBackgroundColor="@color/light_background"
+        app:cardCornerRadius="4dp"
+        android:minHeight="180dp"
+        app:cardElevation="5dp">
+        <TextView
+            android:layout_marginLeft="@dimen/space5"
+            android:layout_marginRight="@dimen/space5"
+            android:layout_marginTop="@dimen/space5"
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/select_location"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+        <LinearLayout
+
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/cLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/clocation"
+                    android:textColor="@color/text_color"
+                    android:textSize="18sp"
+                   />
+
+                <RadioButton
+                    android:id="@+id/hLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:shadowColor="@color/red"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+
+                    android:text="@string/hlocation"
+                    android:textColor="@color/text_color"
+
+                    android:textSize="18sp" />
+
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_marginTop="40dp"
+            android:id="@+id/Searching"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/text_color"
+            style="@style/Widget.Neumorph.Button">
+
+        </soup.neumorphism.NeumorphButton>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
