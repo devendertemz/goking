@@ -22,7 +22,7 @@
 
     <string name="does"> Tell Us About Your Child To Help Us Find The Right Carpool  </string>
 
-    <string name="note">Note: Sometimes you may not find someone that matches your criteriea. However as long as you are on this app, someone will find you or you might find someone else soon.  </string>
+    <string name="note"><font color='#E18A07'> Note:</font> Sometimes you might not find someone that matches your criteria. However as long as you are on this app, someone might find you. </string>
 
     <string name="search_from">Where would you like to search from - if you are home please select home</string>
 
