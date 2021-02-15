@@ -211,6 +211,8 @@ public class Edit_Profile extends AppCompatActivity implements AdapterView.OnIte
                         String username = jsonObject.getString("uname");
                         String school_name = jsonObject.getString("school_name");
                         String school_stage = jsonObject.getString("school_categories");
+                        School=school_name;
+                        School_type=school_stage;
                         name.setText(username);
                         tv_school_name.setText(school_name);
                         tv_school_stage.setText(school_stage);
