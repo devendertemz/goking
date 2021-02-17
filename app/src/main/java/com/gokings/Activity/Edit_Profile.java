@@ -137,6 +137,7 @@ public class Edit_Profile extends AppCompatActivity implements AdapterView.OnIte
         super.onResume();
         name.clearFocus();
     }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View v, int position,
                                long id) {
@@ -144,9 +145,10 @@ public class Edit_Profile extends AppCompatActivity implements AdapterView.OnIte
 
 
         Spinner spinner = (Spinner) parent;
+
         if (spinner.getId() == R.id.school_name) {
             School = parent.getItemAtPosition(position).toString();
-            // Toast.makeText(this, School+"", Toast.LENGTH_SHORT).show();
+          //   Toast.makeText(this, School+"", Toast.LENGTH_SHORT).show();
         } else if (spinner.getId() == R.id.Education_stage) {
             School_type = parent.getItemAtPosition(position).toString();
 

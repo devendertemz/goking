@@ -150,7 +150,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
 
                             namelist.add(name);
                            // Toast.makeText(Showing_person_google.this, phone + name + lat + "   " + longt + "", Toast.LENGTH_SHORT).show();
-                            float zoomLevel = 11.0f; //This goes up to 21
+                            float zoomLevel = 17.0f; //This goes up to 21
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
                             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
@@ -293,9 +293,9 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
         alertDialogBuilder.setTitle("");
 
         // set dialog message
-        alertDialogBuilder.setIcon(R.mipmap.ic_launcher_round);
+        alertDialogBuilder.setIcon(R.drawable.logo);
         alertDialogBuilder
-                .setMessage("Please click on marker")
+                .setMessage("Please click on the red marker(s)")
                 .setCancelable(false)
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
