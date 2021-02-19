@@ -295,7 +295,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
         // set dialog message
         alertDialogBuilder.setIcon(R.drawable.logo);
         alertDialogBuilder
-                .setMessage("Please click on the red marker(s)")
+                .setMessage("Click on red marker(s) to view details of other carpoolers")
                 .setCancelable(false)
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
