@@ -150,7 +150,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
 
                             namelist.add(name);
                            // Toast.makeText(Showing_person_google.this, phone + name + lat + "   " + longt + "", Toast.LENGTH_SHORT).show();
-                            float zoomLevel = 17.0f; //This goes up to 21
+                            float zoomLevel =15.25f; //This goes up to 21
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
                             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
