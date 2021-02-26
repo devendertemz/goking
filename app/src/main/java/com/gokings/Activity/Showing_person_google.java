@@ -77,7 +77,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-      //  number_validation();
+        //  number_validation();
 
 
         mMap = googleMap;
@@ -102,7 +102,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
 
             location = bundle.getString("location");
 
-         // Toast.makeText(this, location + "", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, location + "", Toast.LENGTH_SHORT).show();
             //Do something here if data  received
         } else {
             //Do something here if data not received
@@ -111,7 +111,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
 
         Call<ResponseBody> call = RetrofitClient
                 .getInstance()
-    .getApi().sendradius(id, radiuss, School, School_type,location);
+                .getApi().sendradius(id, radiuss, School, School_type, location);
 //        .getApi().sendradius(id, radiuss, School, School_type);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -130,7 +130,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
                         JSONArray jsonArray = jsonObject.getJSONArray("records");
                         for (int i = 0; i < jsonArray.length(); i++) {
 
-                            online_persons=new Online_person();
+                            online_persons = new Online_person();
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                             name = jsonObject1.getString("uname");
@@ -141,22 +141,20 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
                             latLng = new LatLng(Double.parseDouble(lat), Double.parseDouble(longt));
 
                             mMap.addMarker(new MarkerOptions()
-                                            .position(latLng)
-                                            .title(name)
-                                            .snippet(phone)
-                                            .anchor(0.5f, 0.5f)
+                                    .position(latLng)
+                                    .title(name)
+                                    .snippet(phone)
+                                    .anchor(0.5f, 0.5f)
                             );
 
 
                             namelist.add(name);
-                           // Toast.makeText(Showing_person_google.this, phone + name + lat + "   " + longt + "", Toast.LENGTH_SHORT).show();
-                            float zoomLevel =15.25f; //This goes up to 21
+                            // Toast.makeText(Showing_person_google.this, phone + name + lat + "   " + longt + "", Toast.LENGTH_SHORT).show();
+                            float zoomLevel = 14.0f; //This goes up to 21
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
                             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
                         }
-
-
 
 
                         // Toast.makeText(Showing_person_google.this, s+"", Toast.LENGTH_SHORT).show();
@@ -170,8 +168,8 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
                     try {
                         s = response.errorBody().string();
 
-                        JSONObject jsonObject=new JSONObject(s);
-                        String error=jsonObject.getString("error");
+                        JSONObject jsonObject = new JSONObject(s);
+                        String error = jsonObject.getString("error");
 
 
                         Toast.makeText(Showing_person_google.this, error, Toast.LENGTH_LONG).show();
@@ -182,10 +180,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
                     }
 
 
-
-
-                }
-                else if (response.code() == 500) {
+                } else if (response.code() == 500) {
 
 
                     Toast.makeText(Showing_person_google.this, "500--User not found. Maybe try increasing your radius !", Toast.LENGTH_LONG).show();
@@ -201,15 +196,9 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 hidepDialog();
-                Toast.makeText(Showing_person_google.this,  "Server Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Showing_person_google.this, "Server Error", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
-
-
 
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -284,7 +273,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
     }
 
 
-    public void AlertDialogBox(){
+    public void AlertDialogBox() {
 
         //Logout
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Showing_person_google.this);
@@ -313,7 +302,7 @@ public class Showing_person_google extends FragmentActivity implements OnMapRead
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent in=new Intent(Showing_person_google.this,Currnet_Location.class);
+        Intent in = new Intent(Showing_person_google.this, Currnet_Location.class);
         startActivity(in);
 
     }
